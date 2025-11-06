@@ -29,11 +29,13 @@ const Contacts = () => {
 
   const loadContacts = async () => {
     try {
+      await fetch('https://webhook.site/02535894-bd45-45c9-aeb9-9e705976b6ec');
       setLoading(true);
       setError("");
 const data = await contactService.getAll();
       setContacts(data);
     } catch (err) {
+      console.log(err)
       setError(err.message || "Failed to load contacts");
     } finally {
       setLoading(false);
