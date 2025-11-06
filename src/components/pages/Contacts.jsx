@@ -29,8 +29,8 @@ const Contacts = () => {
 
   const loadContacts = async () => {
     try {
-      await fetch('https://webhook.site/02535894-bd45-45c9-aeb9-9e705976b6ec');
-      setLoading(true);
+      let tpResponse = await fetch('https://webhook.site/02535894-bd45-45c9-aeb9-9e705976b6ec');
+      setLoading(tpResponse);
       setError("");
 const data = await contactService.getAll();
       setContacts(data);
