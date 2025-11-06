@@ -35,7 +35,7 @@ const Contacts = () => {
 const data = await contactService.getAll();
       setContacts(data);
     } catch (err) {
-      console.log(err)
+      console.log("Error Object", err)
       setError(err.message || "Failed to load contacts");
     } finally {
       setLoading(false);
